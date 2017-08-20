@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819175616) do
+ActiveRecord::Schema.define(version: 20170820093627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20170819175616) do
     t.integer "tweetReply"
     t.integer "tweetForward"
     t.integer "tweetLove"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "firstName"
+    t.string "lastName"
+    t.string "userName"
+    t.string "country"
+    t.string "city"
+    t.date "dateOfBirth"
+    t.string "email"
+    t.string "aboutSelf"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
