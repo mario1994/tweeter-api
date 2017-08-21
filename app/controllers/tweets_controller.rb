@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   skip_before_action :authorize_request, only: [:index,:create,:show,:update,:destroy]
   # GET /tweets
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.order("created_at DESC")
     json_response(@tweets)
   end
 
