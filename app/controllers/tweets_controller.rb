@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
 	before_action :set_tweet, only: [:show, :update, :destroy]
-
+  skip_before_action :authorize_request, only: :index
   # GET /tweets
   def index
     @tweets = Tweet.all
