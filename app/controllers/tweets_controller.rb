@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
 
   # PUT /tweets/:id
   def update
-    @todo.update(tweet_params)
+    @tweet.update(tweet_params)
     head :no_content
   end
 
