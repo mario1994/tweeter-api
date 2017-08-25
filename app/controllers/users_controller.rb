@@ -4,19 +4,12 @@ class UsersController < ApplicationController
   # return authenticated token upon signup
   def create
     findUser = User.find_by(email:user_params[:email])
-    findUserUsername = User.find_by(userName:user_params[:userName])
-    if  findUser == nil and findUserUsername == nil
+    if  findUser == nil
 
     user = User.create!(user_params)
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token, user: user }
     json_response(response, :created)
-  elsif findUserUsername != nil and findUser != nil
-    response = {error: "both username and email are already in use"}
-    json_response (response)
-  elsif findUserUsername != nil
-    response = {error: "username is already in use"}
-    json_response (response)
   else
     response = {error: "email is already in use"}
     json_response (response)

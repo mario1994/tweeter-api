@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20170825112400) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "largeUserProfilePicture"
-    t.string "smallUserProfilePicture"
+    t.string "largeUserProfilePicture", default: "https://www.bmw.hr/content/dam/bmw/common/all-models/m-series/x6m/2014/model-card/X6-M-F86_ModelCard.png"
+    t.string "smallUserProfilePicture", default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJvSufpWSL8GwKt83vrdZ8le_tbA8RdwBAO1EHs-Ats-e9qGux-PZxdM"
   end
 
 end
