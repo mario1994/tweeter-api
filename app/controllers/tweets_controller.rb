@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
 
   def tweet_params
     # whitelist params
-    params.permit(:tweetAuthor, :tweetAuthorTag, :tweetTime, :tweetText,:tweetImageURL, :tweetReply, :tweetForward, :tweetLove)
+    params.permit(:tweetAuthor, :tweetAuthorTag, :tweetTime, :tweetText,:tweetImageURL, :tweetReply, :tweetForward, :tweetLove, :smallAuthorProfilePicture)
   end
 
   def set_tweet

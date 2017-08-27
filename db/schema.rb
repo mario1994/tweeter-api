@@ -18,12 +18,13 @@ ActiveRecord::Schema.define(version: 20170825112400) do
   create_table "tweets", force: :cascade do |t|
     t.string "tweetAuthor"
     t.string "tweetAuthorTag"
-    t.integer "tweetTime"
+    t.bigint "tweetTime"
     t.string "tweetText"
     t.string "tweetImageURL"
     t.integer "tweetReply"
     t.integer "tweetForward"
     t.integer "tweetLove"
+    t.string "smallAuthorProfilePicture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

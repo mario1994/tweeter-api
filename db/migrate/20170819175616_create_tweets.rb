@@ -3,12 +3,13 @@ class CreateTweets < ActiveRecord::Migration[5.1]
     create_table :tweets do |t|
       t.string :tweetAuthor
       t.string :tweetAuthorTag
-      t.integer :tweetTime
+      t.bigint :tweetTime
       t.string :tweetText
       t.string :tweetImageURL
       t.integer :tweetReply
       t.integer :tweetForward
       t.integer :tweetLove
+      t.string :smallAuthorProfilePicture
 
       t.timestamps
     end
